@@ -1,0 +1,11 @@
+Вечером сижу я за компьютером,
+Устал и спать хочу немного
+Встану и схожу скорей за бутером
+А то задремлю скоро.
+абоба
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaapppapapapskdfxgzhxhckvmb,cpd--506948274
+
+a=int(input())
+
+
+

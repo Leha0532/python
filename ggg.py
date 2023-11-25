@@ -1,0 +1,5 @@
+print("ведите 2 сторыны промогольника")
+a=int(input())
+b=int(input())
+print("perimetr:")
+print((a+b)*2)

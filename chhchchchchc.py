@@ -19,23 +19,14 @@ def input_number(input_phrase):
     return int(x)
 
 
-while True
-x = input("ведите первое число")
-if not x.isdigit():
-    print ("водить числа")
-    continue
-x = int(x)
+while True:
+    x = input_number("ведите первое число")
+    sign = input("ведите знак действие")
+    y = input_number("ведите второе число")
+    if sign == "+":
+        result = plus(x,y)
+        print(result)
+    elif sign  == "-":
+        result = minus(x,y)
+        print(result)
 
-sign = input("ведите знак действие")
-y = input("ведите второе число")
-if not y.isdigit():
-    print("водить числа")
-    continue
-y = int(y)
-if sign == "+":
-    result = plus(x,y)
-    print(result)
-elif sign  == "-":
-    result = minus(x,y)
-    print(result)
-elif sign == ""

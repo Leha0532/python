@@ -8,19 +8,48 @@ def sign_up():
         print(f"polzodatel {login} zaregal")
     else:
         print("paroli ne poxozi")
-    
-def write_to_file():
+        
+def sign_in():
+    login = input("Bedite login")
+    password = input("bedite parol")
+    login_list = read_list("logins.txt")
+    password_list = read_list("password.txt")
+    if login in login_list:
+        login_str = login_list.index(login)
+        True_password = password_list[login_str]
+        if password == True_password:
+            print("yra ti zachel")
+            return True
+        else:
+            print("parol inocorect")
+            return False
+            
+def write_to_file(filename, text):
     with open("text.txt",mode="a",encoding="utf-8") as file:
-        file.write()
-    
+        file.write(text)
+        
+def read_list(filename):
+    with open(filename, mode="r", encoding="utf-8") as file:
+        text = file.read().split("\n")
+        return text
+        
+
+        
+access =False
 while True:
-    print("programa ymeett")
-    print("1 - zaregatcia")
-    print("2 - dieti iz programi")
-    action = input("bedide nomer")
-    if action == "1":
-        sign_up()
-    if action == "2":
-        print("spacibo")
-        break
-    input("nazmi enter xtobi prodoldit")
+    if not access:
+        print("programa ymeett")
+        print("1 - zaregatcia")
+        print("2 doiti in programy")
+        print("3 - dieti iz programi")
+        action = input("bedide nomer")
+        if action == "1":
+            sign_up()
+        elif action =="2":
+            access = sign_in()
+        elif action == "3":
+            print("spacibo")
+            break
+    elif access:
+        print("Bi B sistem")
+    input("nazmi enter i prodolzi")

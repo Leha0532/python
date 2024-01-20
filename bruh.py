@@ -1,3 +1,6 @@
+import calculator
+
+
 def sign_up():
     login = input("login bedi")
     password1 = input("pridymai parol")
@@ -8,6 +11,8 @@ def sign_up():
         print(f"polzodatel {login} zaregal")
     else:
         print("paroli ne poxozi")
+        
+    import file1 
         
 def sign_in():
     login = input("Bedite login")
@@ -51,5 +56,15 @@ while True:
             print("spacibo")
             break
     elif access:
-        print("Bi B sistem")
+        print("menu")
+        print("1 - calculator")
+        print("2 - wish")
+        print("3 - confet")
+        action = input("bedide nomer")
+        if action == "1":
+            calculator.main()
+        if action == "2":
+            wish.main()           
+        if action == "3":
+            confet.main()
     input("nazmi enter i prodolzi")

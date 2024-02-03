@@ -12,7 +12,7 @@ def sign_up():
     else:
         print("paroli ne poxozi")
         
-    import file1 
+    import leha1.file1 as file1 
         
 def sign_in():
     login = input("Bedite login")

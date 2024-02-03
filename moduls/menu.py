@@ -1,16 +1,23 @@
-pizza = ("piperoni" ,"margarita", "4 cira",  "gavai")
-cost = (80,81,82,83)
+from constant import *
+from cost import *
 
-user_pizza ={}
-user_cost = {}
+
 
 def choise_pizza():
     print("pizza dream")
     print("menu pizza")
-    for i; pizza in enumerate(pizza):
-        print(f"{pizza} {cost} rybl")
-        while True
-            order = int(input(Biberi pizza >>>))
-            user_pizza.append(order-1)
-            user_cost.append(order-1)
-            print("pizza in corzina")
+    for number, pizza in enumerate(PIZZA):
+        print(f"{number+1}. {pizza} - {COST[number]}")
+        
+    while True:
+        order = int(input("choise pizza: "))
+        order -= 1
+        
+        print(f"pizza {PIZZA[order]} add in korzina")
+        
+        flag = input("hotite prodolzhit?")
+        if flag == "net":
+            print("ti Bisel iz menu")
+            break
+        
+choise_pizza

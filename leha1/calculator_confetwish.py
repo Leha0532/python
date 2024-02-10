@@ -1,7 +1,7 @@
 import calculator
 import confet
 import wish
-import login_pass
+import leha1.login_pass as login_pass
 
 access =False
 while True:

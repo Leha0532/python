@@ -7,6 +7,8 @@ import arcade
 SCREEN_WIDTH = 1000
 SCREEN_HEIGHT = 700
 SCREEN_TITLE = "Platformed"
+#SPRITE_PATH = "arcade_game_1/dvd/dvd.gif"
+SPRITE_PATH = "./dvd.gif"
 
 
 class MyGame(arcade.Window):
@@ -15,7 +17,7 @@ class MyGame(arcade.Window):
     """
 
     def __init__(self):
-        self.global_speed = 120
+        self.global_speed = 4
         self.speed_x = self.global_speed
         self.speed_y = self.global_speed
         self.x = 14
@@ -47,7 +49,7 @@ class MyGame(arcade.Window):
     def on_draw(self):
         """Render the screen."""
         self.clear()
-        arcade.Sprite("arcade_game_1/dvd/dvd.gif", center_x=self.x, center_y=self.y, scale= 0.1).draw()
+        arcade.Sprite(SPRITE_PATH, center_x=self.x, center_y=self.y, scale= 0.1).draw()
         # Code to draw the screen goes here
 
 

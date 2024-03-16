@@ -1,12 +1,12 @@
 """
-Platformer Game
+Platformed Game
 """
 import arcade
 
 # Constants
 SCREEN_WIDTH = 1000
 SCREEN_HEIGHT = 650
-SCREEN_TITLE = "Platformer"
+SCREEN_TITLE = "Platformed"
 
 # Constants used to scale our sprites from their original size
 CHARACTER_SCALING = 1
@@ -78,7 +78,7 @@ class MyGame(arcade.Window):
 
         # Create the 'physics engine'
 
-        self.physics_engine = arcade.PhysicsEnginePlatformer(
+        self.physics_engine = arcade.PhysicsEnginePlatformed(
 
             self.player_sprite, gravity_constant=GRAVITY, walls=self.scene["Walls"]
 

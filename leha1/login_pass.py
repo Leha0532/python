@@ -8,7 +8,7 @@ def read_list(filename):
         return text
 
 def sign_up():
-    login = input("login bedi")
+    login = input("login beds")
     password1 = input("pridymai parol")
     password2 = input("bedide eoe jlby hfp")
     if password1 == password2:

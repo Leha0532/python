@@ -14,6 +14,9 @@ BALL_SCALE = 0.2
 PLAT_SPEED = 5
 SPEED_UP = 0.1
 
+WIN_IMAGE = 'ping_pong/you win.webp'
+
+
 class Ball(arcade.Sprite):
     def change_speed(self):
         if  self.change_x > 0:
@@ -58,6 +61,9 @@ class GameWindow(arcade.Window):
         self.score = 0
         self.plat.center_x = SCREEN_WIDTH//2
         self.plat.center_y = SCREEN_HEIGHT//12
+        self.tries = 3
+        self.game = True
+        self.win = False
      
     
     def setup(self):
@@ -78,19 +84,26 @@ class GameWindow(arcade.Window):
                         start_y=SCREEN_HEIGHT-20,
                         color=(255,255,255),
                         font_size=20)
+        if (self.win):
+            arcade.Sprite(WIN_IMAGE, 1, center_x=SCREEN_WIDTH/2, center_y=SCREEN_HEIGHT/2).draw()
                  
     def on_update(self, delta_time: float):
+        if (not self.game):
+            return
         self.ball.update()
         self.plat.update()
         if arcade.check_for_collision(self.ball, self.plat):
             self.ball.change_y = - self.ball.change_y
             self.ball.bottom = self.plat.top
-            self.score += 1
+            self.score += 40
         if self.ball.bottom < 0 :
             self.tries -= 1
             self.setup()
             if self.tries ==0:
-                self.game = False                   
+                self.game = False
+        if self.score > 30 :                   
+            self.game = False
+            self.win = True
     def on_key_press(self, symbol: int, modifiers: int):
         if symbol == arcade.key.RIGHT:
             self.plat.change_x = PLAT_SPEED

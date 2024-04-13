@@ -1,13 +1,10 @@
 import arcade
 
-from arcade_game_1.bruh import SCREEN_WIDTH
-from ping_pong.game import PLAT_SPEED, GameWindow
-
-SCREEN_WEIDHT = 800
+SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 600
 SCREEN_TITLE = "ГОНКА"
 
-class Gamewindow(arcade.window):
+class GameWindow(arcade.Window):
     def __init__(self,widht, height, title):
         super().__init__(widht, height, title)
         

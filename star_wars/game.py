@@ -53,6 +53,11 @@ class GameWindow(arcade.Window):
     def on_mouse_motion(self, x: int, y: int, dx: int, dy: int):
         self.spaceship.center_x = x
         self.set_mouse_visible(False)
+        if self.spaceship.center_x > SCREEN_WIDTH:
+            self.spaceship.center_x = SCREEN_WIDTH
+
+        if self.spaceship.center_x < 0:
+            self.spaceship.center_x = 0
 
 window = GameWindow(SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_TITLE)
 window.setup()

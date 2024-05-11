@@ -20,6 +20,10 @@ HERO_IMG = DIR + "hero.png"
 
 HERO_SIZE = 0.2
 
+ENEMY_SIZE = 0.2
+
+ENEMY_IMG = DIR + "enemy.png"
+
 class Laser(arcade.Sprite):
     def __init__(self):
         super().__init__(LASER_IMG, LASER_SIZE)
@@ -37,17 +41,26 @@ class Spaceship(arcade.Sprite):
     def update (self):
         self.center_x += self.change_x
 
+class Enemy(arcade.Sprite):
+    def __init__(self):
+        super().__init__(ENEMY_IMG, ENEMY_SIZE)
+        self.center_y = SCREEN_HEIGHT
+        self.center_x = SCREEN_WIDTH/2
+    def update(self):
+        return super().update()
+
 class GameWindow(arcade.Window):
     def __init__(self,widht, height, title):
         super().__init__(widht, height, title)
         self.bg = arcade.load_texture(BG_IMG)
         self.spaceship = Spaceship(HERO_IMG, HERO_SIZE)
         self.lasers = arcade.SpriteList()
+        self.enemy = Enemy()
     
     def setup(self):
         self.spaceship.center_x = SCREEN_WIDTH/2
         self.spaceship.center_y = SCREEN_HEIGHT/4
-        
+
     # отрисовка
     def on_draw(self):
         arcade.start_render()
@@ -59,6 +72,7 @@ class GameWindow(arcade.Window):
         
         self.spaceship.draw()
         self.lasers.draw()
+        self.enemy.draw()
             
     # обновление окна
     def on_update(self, delta_time):
